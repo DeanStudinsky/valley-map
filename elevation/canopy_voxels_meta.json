@@ -1,0 +1,35 @@
+{
+ "note": "Non-ground LiDAR returns per 1-ft height bin above the terrain_fine DTM, per 0.5 m cell. Grid row0=SOUTH, col0=WEST.",
+ "source": "LPC_SaltonSea_2021_11SNT480440.laz (USGS 3DEP, CA_SaltonSea 2021)",
+ "grid": {
+  "x0": 548000,
+  "y0": 3744000,
+  "cellM": 0.5,
+  "c0": 1040,
+  "c1": 1620,
+  "r0": 0,
+  "r1": 680,
+  "w": 580,
+  "h": 680
+ },
+ "bins": {
+  "count": 96,
+  "ft": 1,
+  "from": 0
+ },
+ "points": {
+  "inWindow": 2942898,
+  "nonGroundKept": 1407522,
+  "pointFormat": 6
+ },
+ "classes": {
+  "1": 1806019,
+  "2": 1135953,
+  "7": 192,
+  "18": 734
+ },
+ "bin": {
+  "voxels": "canopy_voxels.bin uint8 [row][col][bin]",
+  "ground": "canopy_ground.bin uint8 [row][col]"
+ }
+}

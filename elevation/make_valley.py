@@ -6,8 +6,8 @@ terrain.bin / terrain_wide.bin so a scene can drop it straight in.
 Source raster lives in the sibling "Coachella Valley 3D" project (510 MB, way
 too big to fetch from a page and not committed here). Point ALVA_DEM at it:
 
-    ALVA_DEM="D:/keshi/Code/Coachella Valley 3D/socal_dem_utm11n.tif" \
-    PYTHONPATH="D:/keshi/Code/Coachella Valley 3D/pylibs" \
+    ALVA_DEM="C:/Users/dmcge/Desktop/Coachella Valley 3D/socal_dem_utm11n.tif" \
+    PYTHONPATH="C:/Users/dmcge/Desktop/Coachella Valley 3D/pylibs" \
       python make_valley.py
 
 Env overrides: ALVA_HALF_M (half box width, m), ALVA_N (samples per side),
@@ -31,7 +31,7 @@ FT = 3.280839895
 BASE_FT = 399.57349381574863          # DTM at the address — the shared datum
 ADDR_E, ADDR_N = 548660.3, 3744180.9  # street address = scene (0, 0)
 
-DEM = os.environ.get("ALVA_DEM", r"D:/keshi/Code/Coachella Valley 3D/socal_dem_utm11n.tif")
+DEM = os.environ.get("ALVA_DEM", r"C:/Users/dmcge/Desktop/Coachella Valley 3D/socal_dem_utm11n.tif")
 HALF = float(os.environ.get("ALVA_HALF_M", 20000))   # 40 km box — reaches San Jacinto Peak
 N = int(os.environ.get("ALVA_N", 1024))
 OUT = os.environ.get("ALVA_OUT", "valley")

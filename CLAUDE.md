@@ -26,9 +26,15 @@ There is **no build system, framework, or bundler**. Scenes are standalone HTML 
 
 ## Running it
 
-Must be served over **HTTP** — ES-module imports and `fetch()` both fail from `file://`. Any static server works; prior sessions used port 7432. The `/run` skill is pre-approved.
+Must be served over **HTTP** — ES-module imports and `fetch()` both fail from `file://`. Use the committed server, from the repo root:
 
-**Do not serve the repo root with a directory-listing or dotfile-serving server** — `.git/config` contains a plaintext GitHub PAT. A minimal Node server that denies dot-segments is the safe pattern (bind `127.0.0.1`, 403 any path segment starting with `.`).
+```
+node serve.mjs            # http://127.0.0.1:7432/   (port is an optional arg; --open launches the browser)
+```
+
+Do **not** write a fresh server in the scratchpad each session — a new path every time means the user gets a new permission prompt every time. `Open Alva Court.bat` (and the desktop shortcut) runs `node serve.mjs --open` for the user. The `/run` skill is pre-approved.
+
+**Do not serve the repo root with a directory-listing or dotfile-serving server** — `.git/config` contains a plaintext GitHub PAT. `serve.mjs` binds `127.0.0.1` (no firewall prompt) and 403s any path segment starting with `.`, checked against the realpath so the `GIT~1` 8.3 alias is blocked too.
 
 No tests, no lint, no build. "Verify a change" = serve it, load it, read the console.
 
@@ -76,8 +82,8 @@ python render_vs_naip_psc.py <site> <render.png>    # scores a render against th
 One step is Python, not Node — it reads a GeoTIFF, and rasterio is the tool for that:
 
 ```
-ALVA_DEM="D:/keshi/Code/Coachella Valley 3D/socal_dem_utm11n.tif" \
-PYTHONPATH="D:/keshi/Code/Coachella Valley 3D/pylibs" python make_valley.py
+ALVA_DEM="C:/Users/dmcge/Desktop/Coachella Valley 3D/socal_dem_utm11n.tif" \
+PYTHONPATH="C:/Users/dmcge/Desktop/Coachella Valley 3D/pylibs" python make_valley.py
 ```
 
 `make_valley.py` cuts a 40 km box at 39 m posting out of the 10 m NED/3DEP mosaic built by

@@ -34,7 +34,12 @@
       "Read(//c/Users/dmcge/AppData/Roaming/npm/node_modules/**)",
       "Bash(npm list *)",
       "Bash(npx playwright *)",
-      "Read(//c/Users/dmcge/AppData/Local/Temp/**)"
+      "Read(//c/Users/dmcge/AppData/Local/Temp/**)",
+      "Bash(curl -s -m 30 \"https://tnmaccess.nationalmap.gov/api/v1/products?datasets=Lidar%20Point%20Cloud%20\\(LPC\\)&bbox=-116.462,33.836,-116.461,33.837&max=5&outputFormat=JSON\")",
+      "Bash(python -c ' *)",
+      "Bash(curl -s -m 20 -o /dev/null -w \"%{http_code}\\\\n\" \"https://s3-us-west-2.amazonaws.com/usgs-lidar-public/CA_SaltonSea_2021/ept.json\")",
+      "Bash(curl -s -m 20 \"https://s3-us-west-2.amazonaws.com/usgs-lidar-public/?prefix=CA_SaltonSea&delimiter=/\")",
+      "Bash(curl -s -m 30 \"https://s3-us-west-2.amazonaws.com/usgs-lidar-public/CA_SaltonSea_EarthMRI_3_D21/ept-hierarchy/0-0-0-0.json\")"
     ]
   }
 }

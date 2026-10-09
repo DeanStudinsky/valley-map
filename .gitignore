@@ -40,3 +40,8 @@ elevation/dem1m_*.bin
 # NAIP/NDVI working set — rasters are never a product here, only the instances
 # extracted from them are.
 elevation/raw/
+
+# make_study.mjs working set — vox.u8 alone is 213 MB, over GitHub's 100 MB
+# per-file limit. terrain_study.bin is the product derived from it and IS
+# committed. Regenerate with: node make_study.mjs (from elevation/)
+elevation/study/

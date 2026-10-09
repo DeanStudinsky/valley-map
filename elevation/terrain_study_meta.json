@@ -1,0 +1,23 @@
+{
+  "note": "Elevations in FEET (NAVD88). Grid row0=SOUTH, col0=WEST. World: +X=East, +Z=South, North=-Z. Subtract baseFt for y near 0.",
+  "source": "USGS 3DEP CA_SaltonSea_EarthMRI_2021_D21 (flown 2021) — sight-line study box, built by make_study.mjs",
+  "nc": 1300,
+  "nr": 1300,
+  "cellFt": 3.280839895,
+  "cellM": 1,
+  "utm": {
+    "x0": 548000.25,
+    "y0": 3743600.25,
+    "addrE": 548660.3,
+    "addrN": 3744180.9
+  },
+  "baseFt": 399.57349381574863,
+  "bin": {
+    "file": "terrain_study.bin",
+    "layout": "Float32LE: DSM[nc*nr] then DTM[nc*nr]"
+  },
+  "sizeFt": [
+    4265.0918635,
+    4265.0918635
+  ]
+}
